@@ -96,6 +96,9 @@ case "${target}" in
   d30v-*-*)
 	AC_CONFIG_SUBDIRS([d30v])
 	;;
+  eco32*)
+ 	AC_CONFIG_SUBDIRS([eco32])
+ 	;;
   fr30-*-*)
 	AC_CONFIG_SUBDIRS([fr30])
 	;;

@@ -127,6 +127,9 @@ case "${host_cpu}" in
   d30v*)
 	machine_dir=d30v
 	;;
+  eco32)
+	machine_dir=eco32
+    ;;
   epiphany)
 	machine_dir=epiphany
 	;;
@@ -393,6 +396,9 @@ case "${host}" in
   d30v*)
 	sys_dir=
 	;;
+  eco32*)
+	sys_dir=
+	;;
   epiphany-*-*)
 	sys_dir=epiphany
 	# crt0 is provided by libgloss.
@@ -614,6 +620,9 @@ case "${host}" in
   d30v*)
 	newlib_cflags="${newlib_cflags} -DABORT_MESSAGE -DSMALL_MEMORY -DMISSING_SYSCALL_NAMES"
 	syscall_dir=
+	;;
+  eco32*)
+	syscall_dir=syscalls
 	;;
   epiphany*)
 	syscall_dir=syscalls

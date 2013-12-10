@@ -36,6 +36,15 @@ _BEGIN_STD_C
 #define _JBLEN 10
 #endif
 
+#ifdef __ECO32__
+/*
+each entry in 32-bit wide
+for a total of 30 registers ($0 and $2 not included)
+*/
+#define _JBLEN 30
+#define _JBTYPE unsigned int
+#endif
+
 /* necv70 was 9 as well. */
 
 #if defined(__m68k__) || defined(__mc68000__)

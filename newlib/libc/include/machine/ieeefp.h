@@ -50,6 +50,10 @@
 	
 */
 
+#ifdef __ECO32__
+#define __IEEE_BIG_ENDIAN
+#endif
+
 #if (defined(__arm__) || defined(__thumb__)) && !defined(__MAVERICK__)
 /* ARM traditionally used big-endian words; and within those words the
    byte ordering was big or little endian depending upon the target.

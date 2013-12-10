@@ -3609,6 +3609,9 @@ case "${target}" in
   fr30-*-elf*)
     noconfigdirs="$noconfigdirs gdb"
     ;;
+  eco32)
+    noconfigdirs="$noconfigdirs gprof"
+    ;;
   moxie-*-*)
     noconfigdirs="$noconfigdirs gprof"
     ;;

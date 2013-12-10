@@ -266,7 +266,7 @@ case $basic_machine in
 	| bfin \
 	| c4x | clipper \
 	| d10v | d30v | dlx | dsp16xx \
-	| epiphany \
+	| eco32 | epiphany \
 	| fido | fr30 | frv \
 	| h8300 | h8500 | hppa | hppa1.[01] | hppa2.0 | hppa2.0[nw] | hppa64 \
 	| hexagon \
