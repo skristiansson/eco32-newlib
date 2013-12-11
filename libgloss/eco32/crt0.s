@@ -49,6 +49,8 @@ clrtest:
 	bltu	$8,$9,clrloop
 	jal		main			# call 'main'
 
+	addi	$4,$2,0
+	jal	exit
 stop:
 	j		stop			# loop to be sure 
 
