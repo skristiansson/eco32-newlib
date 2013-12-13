@@ -38,7 +38,7 @@ _start:
 	mvfs	$8,0
 	ori		$8,$8,1 << 27	# let vector point to RAM
 	mvts	$8,0
-	addi	$29,$0,stack	# set sp
+	addi	$29,$0,stack-4*4	# set sp (& allocate argument registers)
 	addi	$8,$0,_bbss		# clear bss
 	addi	$9,$0,_ebss
 	j		clrtest
