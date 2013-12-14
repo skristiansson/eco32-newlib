@@ -1,27 +1,10 @@
 #
 # start.s -- startup code
 #
-	.global reset
+	.global _start
 	.global	main
-	.global	_ecode
-	.global	_edata
-	.global	_ebss
 
-	.global	_bcode
-	.global	_bdata
-	.global	_bbss
-
-	.text
-_bcode:
-
-	.data
-_bdata:
-
-.section	.bss
-_bbss:
-
-	.text
-
+	.section .vectors, "ax", @progbits
 	# reset arrives here
 reset:
 	j	_start
@@ -34,13 +17,14 @@ intrpt:
 userMiss:
 	j	userMiss
 
+	.section .text
 _start:
 	mvfs	$8,0
 	ori		$8,$8,1 << 27	# let vector point to RAM
 	mvts	$8,0
 	addi	$29,$0,stack-4*4	# set sp (& allocate argument registers)
-	addi	$8,$0,_bbss		# clear bss
-	addi	$9,$0,_ebss
+	addi	$8,$0,__bss_start	# clear bss
+	addi	$9,$0,end
 	j		clrtest
 clrloop:
 	stw		$0,$8,0

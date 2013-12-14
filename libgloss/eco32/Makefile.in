@@ -67,10 +67,9 @@ GCC_LDFLAGS = `if [ -d ${objroot}/../gcc ] ; \
 	then echo -L${objroot}/../gcc ; fi`
 
 CRT0     = crt0.o
-END      = end.o
 BSP      = libeco32.a
 
-OUTPUTS  = $(CRT0) $(BSP) $(END)
+OUTPUTS  = $(CRT0) $(BSP)
 
 # Host specific makefile fragment comes in here.
 @host_makefile_frag@

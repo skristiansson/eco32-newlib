@@ -7,8 +7,8 @@ void *
 _sbrk (incr)
      int incr;
 { 
-   extern unsigned int   _ebss; /* Set by crt0.s.  */
-   static unsigned int * heap_end  = & _ebss;; 
+   extern unsigned int   end; /* Defined in linker script */
+   static unsigned int * heap_end = &end;
    unsigned int *        prev_heap_end; 
 
    prev_heap_end = heap_end; 
